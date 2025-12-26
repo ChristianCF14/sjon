@@ -2,10 +2,9 @@
     --black: #000000;
     --white: #ffffff;
     --magenta: #c12bb9;
-    --gray: #222;
+    --gray: #444;
 }
 
-/* Fundo Preto Absoluto */
 html, body, section, header, footer {
     background-color: var(--black) !important;
 }
@@ -19,7 +18,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Camada de Chuvisco Magenta (FX) */
 #fx-layer {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -29,18 +27,17 @@ body {
 
 .static-dot {
     position: absolute;
-    width: 1.2px; height: 1.2px;
+    width: 1.5px; height: 1.5px;
     background: var(--magenta);
     border-radius: 50%;
     opacity: 0;
-    filter: blur(0.5px);
 }
 
 .grain {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-    opacity: 0.08;
+    opacity: 0.1;
     pointer-events: none;
     z-index: 9999;
 }
@@ -56,7 +53,6 @@ body {
 
 .nav-inner { display: flex; justify-content: space-between; align-items: center; }
 .nav-logo { font-weight: 700; letter-spacing: 5px; font-size: 1rem; }
-.nav-logo span { color: var(--magenta); }
 .nav-menu a {
     color: var(--white);
     text-decoration: none;
@@ -66,7 +62,6 @@ body {
     margin-left: 30px;
 }
 
-.magenta-text { color: var(--magenta) !important; }
 .pacto-btn { border: 1px solid var(--white); padding: 10px 20px; }
 
 /* HERO */
@@ -81,25 +76,12 @@ body {
     z-index: 2;
 }
 
-.branding-top {
-    font-family: 'Special Elite', cursive;
-    font-size: 0.7rem;
-    letter-spacing: 8px;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 30px;
-}
-
-.img-sjon {
-    width: 280px;
-    filter: grayscale(1) contrast(1.2);
-    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
-    mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
-}
-
+.branding-top { font-family: 'Special Elite', cursive; font-size: 0.7rem; letter-spacing: 8px; margin-bottom: 30px; }
+.img-sjon { width: 280px; filter: grayscale(1) contrast(1.2); -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%); }
 .main-title { font-size: clamp(2rem, 8vw, 6rem); font-weight: 700; line-height: 0.85; letter-spacing: -3px; }
 .mask { overflow: hidden; }
 .italic-magenta { font-family: 'Playfair Display', serif; font-style: italic; color: var(--magenta); }
-.hero-quote { font-family: 'Special Elite', cursive; color: #444; margin-top: 30px; font-size: 0.9rem; }
+.hero-quote { font-family: 'Special Elite', cursive; color: var(--gray); margin-top: 30px; font-size: 0.9rem; }
 
 .static-scroll-indicator {
     position: absolute;
@@ -113,67 +95,27 @@ body {
 .scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--magenta), transparent); }
 .static-scroll-indicator span { font-size: 0.55rem; letter-spacing: 6px; color: var(--white); opacity: 0.4; }
 
-/* SEÇÕES */
+/* MANIFESTO */
 .stark-section { padding: 180px 0; position: relative; z-index: 2; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-.container.narrow { max-width: 700px; }
-
+.container.narrow { max-width: 800px; margin: 0 auto; padding: 0 40px; }
 .tag { color: var(--magenta); font-size: 0.65rem; letter-spacing: 4px; display: block; margin-bottom: 30px; }
-h2 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 40px; }
-p { font-size: 1.1rem; color: #777; margin-bottom: 30px; line-height: 1.6; }
+h2 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; margin-bottom: 50px; letter-spacing: -2px; }
+h3 { font-size: 1.8rem; color: var(--magenta); margin: 60px 0 30px; letter-spacing: -1px; }
 
-/* FORMULÁRIO */
-.pacto-card { border: 1px solid #111; padding: 80px 50px; text-align: center; }
+.body-text p { font-size: 1.2rem; color: #999; margin-bottom: 30px; line-height: 1.7; text-align: justify; }
+.highlight-p { color: var(--white) !important; font-weight: 700; border-left: 3px solid var(--magenta); padding-left: 30px; font-style: italic; }
 
-.field-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
-    padding-bottom: 15px;
-    margin: 50px 0;
-}
-
-.field-wrap input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: var(--white);
-    font-family: 'Special Elite', cursive;
-    font-size: 1rem;
-    letter-spacing: 2px;
-}
-
-.field-wrap button {
-    background: transparent;
-    border: none;
-    color: var(--magenta);
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    padding-left: 20px;
-}
+/* FORM */
+.pacto-card { border: 1px solid #111; padding: 100px 60px; text-align: center; }
+.field-wrap { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 15px; margin: 50px 0; }
+.field-wrap input { flex: 1; background: transparent; border: none; color: var(--white); font-family: 'Special Elite', cursive; font-size: 1rem; }
+.field-wrap button { background: transparent; border: none; color: var(--magenta); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; cursor: pointer; padding-left: 20px; }
 
 .discord-msg { font-size: 0.7rem; color: #444; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase; }
-
-.discord-link {
-    display: inline-block;
-    border: 1px solid var(--magenta);
-    padding: 15px 35px;
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    transition: 0.3s;
-}
-
+.discord-link { display: inline-block; border: 1px solid var(--magenta); padding: 15px 35px; color: var(--white); text-decoration: none; font-size: 0.75rem; font-weight: 700; transition: 0.3s; }
 .discord-link:hover { background: var(--magenta); box-shadow: 0 0 20px var(--magenta); }
 .sigilo { font-size: 0.6rem; color: #111; letter-spacing: 5px; margin-top: 40px; }
 
-/* FOOTER */
 .footer { padding: 100px 50px; border-top: 1px solid #0a0a0a; position: relative; z-index: 2; }
 .footer-inner { display: flex; justify-content: space-between; font-size: 0.65rem; color: #333; letter-spacing: 3px; }
 
@@ -181,5 +123,5 @@ p { font-size: 1.1rem; color: #777; margin-bottom: 30px; line-height: 1.6; }
     .nav { padding: 20px; }
     .nav-menu { display: none; }
     .field-wrap { flex-direction: column; gap: 20px; border-bottom: none; }
-    .field-wrap input { border-bottom: 1px solid #333; text-align: center; width: 100%; padding-bottom: 10px; }
+    .field-wrap input { border-bottom: 1px solid #333; width: 100%; text-align: center; padding-bottom: 10px; }
 }
