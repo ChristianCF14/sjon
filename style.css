@@ -1,0 +1,185 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --magenta: #c12bb9;
+    --gray: #222;
+}
+
+/* Fundo Preto Absoluto */
+html, body, section, header, footer {
+    background-color: var(--black) !important;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+
+body {
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Camada de Chuvisco Magenta (FX) */
+#fx-layer {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.static-dot {
+    position: absolute;
+    width: 1.2px; height: 1.2px;
+    background: var(--magenta);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(0.5px);
+}
+
+.grain {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* NAV */
+.nav {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 30px 50px;
+    z-index: 1000;
+    mix-blend-mode: difference;
+}
+
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-weight: 700; letter-spacing: 5px; font-size: 1rem; }
+.nav-logo span { color: var(--magenta); }
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-left: 30px;
+}
+
+.magenta-text { color: var(--magenta) !important; }
+.pacto-btn { border: 1px solid var(--white); padding: 10px 20px; }
+
+/* HERO */
+.hero {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.branding-top {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.7rem;
+    letter-spacing: 8px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 30px;
+}
+
+.img-sjon {
+    width: 280px;
+    filter: grayscale(1) contrast(1.2);
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
+}
+
+.main-title { font-size: clamp(2rem, 8vw, 6rem); font-weight: 700; line-height: 0.85; letter-spacing: -3px; }
+.mask { overflow: hidden; }
+.italic-magenta { font-family: 'Playfair Display', serif; font-style: italic; color: var(--magenta); }
+.hero-quote { font-family: 'Special Elite', cursive; color: #444; margin-top: 30px; font-size: 0.9rem; }
+
+.static-scroll-indicator {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--magenta), transparent); }
+.static-scroll-indicator span { font-size: 0.55rem; letter-spacing: 6px; color: var(--white); opacity: 0.4; }
+
+/* SEÇÕES */
+.stark-section { padding: 180px 0; position: relative; z-index: 2; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+.container.narrow { max-width: 700px; }
+
+.tag { color: var(--magenta); font-size: 0.65rem; letter-spacing: 4px; display: block; margin-bottom: 30px; }
+h2 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 40px; }
+p { font-size: 1.1rem; color: #777; margin-bottom: 30px; line-height: 1.6; }
+
+/* FORMULÁRIO */
+.pacto-card { border: 1px solid #111; padding: 80px 50px; text-align: center; }
+
+.field-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    margin: 50px 0;
+}
+
+.field-wrap input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.field-wrap button {
+    background: transparent;
+    border: none;
+    color: var(--magenta);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+.discord-msg { font-size: 0.7rem; color: #444; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase; }
+
+.discord-link {
+    display: inline-block;
+    border: 1px solid var(--magenta);
+    padding: 15px 35px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: 0.3s;
+}
+
+.discord-link:hover { background: var(--magenta); box-shadow: 0 0 20px var(--magenta); }
+.sigilo { font-size: 0.6rem; color: #111; letter-spacing: 5px; margin-top: 40px; }
+
+/* FOOTER */
+.footer { padding: 100px 50px; border-top: 1px solid #0a0a0a; position: relative; z-index: 2; }
+.footer-inner { display: flex; justify-content: space-between; font-size: 0.65rem; color: #333; letter-spacing: 3px; }
+
+@media (max-width: 768px) {
+    .nav { padding: 20px; }
+    .nav-menu { display: none; }
+    .field-wrap { flex-direction: column; gap: 20px; border-bottom: none; }
+    .field-wrap input { border-bottom: 1px solid #333; text-align: center; width: 100%; padding-bottom: 10px; }
+}
